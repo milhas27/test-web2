@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You, Yishaa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c0e2a 0%, #1a1b3a 50%, #2d1b69 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            color: #e2e8f0;
+        }
+        
+        .night-sky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 4s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .shooting-star {
+            position: absolute;
+            background: linear-gradient(90deg, white, transparent);
+            animation: shooting 3s infinite;
+        }
+        
+        @keyframes shooting {
+            0% { 
+                transform: translateX(-100px) translateY(0) rotate(45deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            100% { 
+                transform: translateX(2000px) translateY(1000px) rotate(45deg);
+                opacity: 0;
+            }
+        }
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .page {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .page.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .elegant-border {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtle-glow {
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .text-shimmer {
+            background: linear-gradient(45deg, #818cf8, #c084fc, #a78bfa);
+            background-size: 200% 200%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s ease infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .particle {
+            position: absolute;
+            background: linear-gradient(45deg, #818cf8, #c084fc);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particle-float 4s ease-in-out infinite;
+        }
+        
+        @keyframes particle-float {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-20px) scale(1.1); opacity: 1; }
+        }
+        
+        .no-button {
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            position: relative;
+        }
+        
+        .no-button:hover {
+            cursor: pointer;
+        }
+        
+        .elegant-transition {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 relative">
+        <audio autoplay loop>
+            <source src="URL_MUSIK_ANDA.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+    <div id="night-sky" class="night-sky"></div>
+    <div id="particle-container"></div>
+    
+    <!-- Page 1: Confession -->
+    <div id="page1" class="page active">
+        <div class="max-w-2xl mx-auto">
+            <div class="elegant-border rounded-2xl p-12 relative overflow-hidden">
+                <div class="absolute top-6 right-6 text-3xl floating-element">🌙</div>
+                <div class="absolute bottom-6 left-6 text-3xl floating-element" style="animation-delay: 2s;">✨</div>
+                
+                <h1 class="playfair text-4xl font-semibold text-center mb-8 fade-in">
+                    <span class="text-shimmer">Haloo, Yishaaa</span>
+                </h1>
+                
+                <div class="space-y-6 mb-10">
+                    <p class="text-gray-300 leading-relaxed text-lg text-center fade-in" style="animation-delay: 0.2s;">
+                        Beneath this starlit canopy, I find myself thinking of you. 
+                    </p>
+                    <p class="text-gray-300 leading-relaxed text-lg text-center fade-in" style="animation-delay: 0.4s;">
+                        Yishaa, mungkin kamu udah tau apa yang mau omongin. 
+                        Aku udah bilang ke kamu buat nunggu. Aku bilang ngga akan butuh waktu lama, ASAP.
+                        Sekarang aku coba buat nepatin itu. Yishaa, mungkin kamu udah tau.
+                        Tapi aku sekali lagi mau bilang kalo aku suka banget sama kamu.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed text-lg text-center fade-in" style="animation-delay: 0.4s;">
+                        Aku gabisa jelasin karena aku sendiri ga paham apa yang kurasain ini. 
+                        Aku cuman tau kalo aku pernah rasain hal yang hampir sama kek gini sebelumnya. 
+                        Bedanya, ini lebih ga terkontrol, idk how to fix this feeling. 
+                        Baru pertama ada cewe yang bisa bikin aku banyak omong, excited ketika chat sama cewe, bahkan kamu ngebuat aku suka senyum-senyum gajelas.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed text-lg text-center fade-in" style="animation-delay: 0.4s;">
+                        Idk how to describe you. Kamu baik, lucu, perhatian, cantik, dan masih banyak hal lainnya di diri kamu yang ngebikin aku ngerasa nyaman saat sama kamu. 
+                        Sampe sekarang, belum ada satu hal pun di diri kamu yang ngebuat aku ngga suka.
+                        Ik you've passed your traumatic recently, but lemme help you, lemme be your friend in everything, lemme know all about you, and grow with you.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed text-lg text-center fade-in" style="animation-delay: 0.4s;">
+                        Sekarang aku bisa bilang, no doubt.
+                        I LOVE YOU, YISHAA!!
+                        I LOVE YOU, YISHAAAAAAAAAA!
+                        LOVE YOU SO MUCH, MORE THAN ANYTHING, LOVE YOU TO THE MOON AND BACK!
+                        I WANNA LOVE YOU AS MUCH AS I CAN!!!
+                    </p>
+                </div>
+                
+                <div class="text-center fade-in" style="animation-delay: 0.6s;">
+                    <button onclick="showPage(2)" class="elegant-transition bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-medium py-3 px-8 rounded-full text-lg hover:scale-105 subtle-glow">
+                        Lanjut aja kalo kepo....
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 2: Question -->
+    <div id="page2" class="page">
+        <div class="max-w-2xl mx-auto">
+            <div class="elegant-border rounded-2xl p-12 relative overflow-hidden">
+                <div class="absolute top-8 left-8 text-2xl floating-element">🌟</div>
+                <div class="absolute bottom-8 right-8 text-2xl floating-element" style="animation-delay: 1.5s;">💫</div>
+                
+                <h1 class="playfair text-5xl font-semibold text-center mb-12 fade-in">
+                    <span class="text-shimmer">Yishaa, will you be my girlfriend?</span>
+                </h1>
+                
+                <div class="space-y-6 mb-8">
+                    <div class="fade-in" style="animation-delay: 0.3s;">
+                        <button onclick="showPage(3)" class="elegant-transition w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-medium py-4 px-8 rounded-full text-xl hover:scale-105 subtle-glow">
+                            Yes, under these stars
+                        </button>
+                    </div>
+                    
+                    <div class="fade-in" style="animation-delay: 0.5s;">
+                        <button id="noButton" class="no-button w-full bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium py-4 px-8 rounded-full text-xl border border-gray-600">
+                            Sorry, not tonight
+                        </button>
+                    </div>
+                </div>
+                
+                <p class="text-sm text-gray-400 text-center fade-in" style="animation-delay: 0.7s;">
+                    The stars seem to be pointing toward a particular choice...
+                    Aku ngga maksa kamu, kalo mau nolak coba aja pencet, aku ngga bakal nyerah wlee!
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 3: Celebration -->
+    <div id="page3" class="page">
+        <div class="max-w-3xl mx-auto">
+            <div class="elegant-border rounded-2xl p-12 relative overflow-hidden">
+                <div class="text-center">
+                    <div class="text-6xl mb-8 fade-in">🌌</div>
+                    
+                    <h1 class="playfair text-5xl font-semibold mb-6 fade-in">
+                        <span class="text-shimmer">AHAHAHAA</span>
+                    </h1>
+                    
+                    <div class="max-w-md mx-auto mb-10 fade-in" style="animation-delay: 0.3s;">
+                        <p class="text-gray-300 leading-relaxed text-lg mb-6">
+                            Like two stars finding their orbit, our paths have aligned. 
+                            I'm filled with wonder at the thought of navigating this journey together, 
+                            under the same endless sky.
+                        </p>
+                        
+                        <p class="text-gray-300 leading-relaxed text-lg">
+                            Makasi, Yishaa! You've made this night and every night to come brighter.
+                        </p>
+                    </div>
+                    
+                    <div class="fade-in" style="animation-delay: 0.7s;">
+                        <a href="flowers.html" class="kado-btn">🎁 coba pencet ✨</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create night sky with stars
+        function createNightSky() {
+            const sky = document.getElementById('night-sky');
+            
+            // Create stars
+            for (let i = 0; i < 200; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.width = Math.random() * 3 + 1 + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 4 + 's';
+                star.style.opacity = Math.random() * 0.8 + 0.2;
+                sky.appendChild(star);
+            }
+            
+            // Create shooting stars
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    createShootingStar();
+                    setInterval(createShootingStar, 8000 + Math.random() * 5000);
+                }, i * 2000);
+            }
+        }
+        
+        function createShootingStar() {
+            const sky = document.getElementById('night-sky');
+            const star = document.createElement('div');
+            star.className = 'shooting-star';
+            star.style.left = Math.random() * 20 + 'vw';
+            star.style.top = Math.random() * 30 + 'vh';
+            star.style.width = Math.random() * 60 + 40 + 'px';
+            star.style.height = '2px';
+            star.style.opacity = '0';
+            sky.appendChild(star);
+            
+            setTimeout(() => {
+                star.remove();
+            }, 3000);
+        }
+        
+        // Page navigation
+        function showPage(pageNumber) {
+            const currentPage = document.querySelector('.page.active');
+            currentPage.classList.remove('active');
+            currentPage.style.opacity = '0'; // Fade out current page
+            
+            setTimeout(() => {
+                currentPage.style.display = 'none'; // Hide current page after fade out
+                const nextPage = document.getElementById('page' + pageNumber);
+                nextPage.style.display = 'block'; // Show next page
+                setTimeout(() => {
+                    nextPage.classList.add('active');
+                    nextPage.style.opacity = '1'; // Fade in next page
+                }, 50);
+            }, 500); // Wait for fade out to complete
+        }
+        
+        // No button behavior
+        const noButton = document.getElementById('noButton');
+        if (noButton) {
+            let isMoving = false; // Flag to check if the button is moving
+
+            function moveButton() {
+                if (isMoving) {
+                    const moveX = (Math.random() * 120 - 60);
+                    const moveY = (Math.random() * 120 - 60);
+                    noButton.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                }
+            }
+
+            noButton.addEventListener('mouseover', function() {
+                isMoving = true; // Start moving
+                moveButton(); // Move immediately
+                const interval = setInterval(moveButton, 100); // Move every 100ms
+
+                noButton.addEventListener('mouseout', function() {
+                    isMoving = false; // Stop moving
+                    clearInterval(interval); // Clear the interval
+                    noButton.style.transform = 'translate(0, 0)'; // Reset position
+                });
+            });
+
+            noButton.addEventListener('click', function() {
+                const moveX = (Math.random() * 200 - 100);
+                const moveY = (Math.random() * 200 - 100);
+                this.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                this.style.opacity = '0.5';
+                
+                setTimeout(() => {
+                    this.style.transform = 'translate(0, 0)';
+                    this.style.opacity = '1';
+                }, 1200);
+            });
+        }
+        
+        // Particle effects for celebration
+        function createParticles() {
+            const container = document.getElementById('particle-container');
+            const colors = ['#818cf8', '#c084fc', '#a78bfa', '#d946ef'];
+            
+            for (let i = 0; i < 40; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = Math.random() * 100 + 'vh';
+                particle.style.animationDelay = Math.random() * 4 + 's';
+                particle.style.width = Math.random() * 8 + 4 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = `linear-gradient(45deg, ${colors[Math.floor(Math.random() * colors.length)]}, ${colors[Math.floor(Math.random() * colors.length)]})`;
+                particle.style.opacity = Math.random() * 0.6 + 0.2;
+                container.appendChild(particle);
+            }
+        }
+        
+        function createExtraShootingStars() {
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    createShootingStar();
+                }, i * 300);
+            }
+        }
+        
+        function restart() {
+            showPage(1);
+            // Clear particles
+            document.getElementById('particle-container').innerHTML = '';
+        }
+        
+        // Initialize
+        createNightSky();
+        
+        // Start animations after a short delay
+        setTimeout(() => {
+            document.querySelectorAll('.floating-element').forEach(el => {
+                el.style.animationPlayState = 'running';
+            });
+        }, 500);
+    </script>
+</body>
+</html>
